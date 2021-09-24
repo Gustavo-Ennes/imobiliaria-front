@@ -25,3 +25,4 @@ quasar build
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://v2.quasar.dev/quasar-cli/quasar-conf-js).
 # imobiliaria-front
+# imobiliaria-front
