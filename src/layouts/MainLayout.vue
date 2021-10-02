@@ -1,5 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -12,7 +13,7 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Quasar Application
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -40,7 +41,9 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+
+      <router-view/>
+
     </q-page-container>
   </q-layout>
 </template>
@@ -101,7 +104,6 @@ export default defineComponent({
   components: {
     EssentialLink
   },
-
   setup () {
     const leftDrawerOpen = ref(false)
 
@@ -112,6 +114,7 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  }
+  },
 })
 </script>
+
