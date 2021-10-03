@@ -4,7 +4,11 @@ const routes = [
     path: '/admin/',
     component: () => import('layouts/AdminLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/AdminPage.vue') }
+      { path: '', component: () => import('pages/AdminPage.vue') },
+      { path: 'tenants/', component: () => import('pages/AdminTenantsPage.vue') },
+      { path: 'owners/', component: () => import('pages/AdminOwnersPage.vue') },
+      { path: 'lands/', component: () => import('pages/AdminLandsPage.vue') },
+      { path: 'properties/', component: () => import('pages/AdminPropertiesPage.vue') }
     ]
   },
   {

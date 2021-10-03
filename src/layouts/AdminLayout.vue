@@ -1,84 +1,37 @@
 <template>
-  <q-layout view="hHh Lpr fFf"> <!-- Be sure to play with the Layout demo on docs -->
+  <q-layout view="hHh lpR fFf">
 
-    <!-- (Optional) The Header -->
-    <q-header elevated>
+    <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn
-          flat
-          round
-          dense
-          icon="menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Header
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          Imobiliária
         </q-toolbar-title>
       </q-toolbar>
 
-      <q-tabs>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
+      <q-tabs align="right">
+        <q-route-tab to="/" label="exit" />
       </q-tabs>
     </q-header>
 
-    <!-- (Optional) The Footer -->
-    <q-footer>
-      <q-tabs switch-indicator>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
-      </q-tabs>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+      
+        <q-scroll-area class="fit">
+          <q-list>
+            <q-item v-for="item in items" :key='item.title'>
 
-      <q-toolbar>
-        <q-btn
-          flat
-          round
-          dense
-          icon="menu"
-          @click="toggleLeftDrawer"
-        />
-        <q-toolbar-title>
-          Footer
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
+                <EssentialLink :icon="item.icon" :title="item.title" :active="item.active" :link="item.title" />
 
-    <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
-    <q-drawer
-      v-model="leftDrawerOpen"
-      side="left"
-      bordered
-      class="bg-grey-2"
-    >
-      <!-- QScrollArea is optional -->
-      <q-scroll-area class="fit q-pa-sm">
-        <!-- Content here -->
-      </q-scroll-area>
+            </q-item>
+          </q-list>
+        </q-scroll-area>
     </q-drawer>
 
     <q-page-container>
-      <!-- This is where pages get injected -->
       <router-view />
     </q-page-container>
 
@@ -87,9 +40,40 @@
 
 <script>
 import { ref } from 'vue'
+import EssentialLink from '../components/EssentialLink.vue'
 
 export default {
-  // name: 'LayoutName',
+  name: "AdminLayout",
+  components: {
+    EssentialLink
+  },
+
+  data(){
+    return {
+      items: [
+        {
+          title: "Tenants",
+          icon: "person_pin",
+          active: true
+        },
+        {
+          title: "Owners",
+          icon: "person_pin",
+          active: false
+        },
+        {
+          title: "Lands",
+          icon: "crop_portrait",
+          active: false
+        },
+        {
+          title: "Properties",
+          icon: "maps_home_work",
+          active: false
+        }
+      ]
+    }
+  },
 
   setup () {
     const leftDrawerOpen = ref(false)
