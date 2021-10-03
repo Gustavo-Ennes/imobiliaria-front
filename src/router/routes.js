@@ -1,10 +1,24 @@
 
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    path: '/admin/',
+    component: () => import('layouts/AdminLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/AdminPage.vue') }
+    ]
+  },
+  {
+    path: '/tenant/',
+    component: () => import('layouts/TenantLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/TenantPage.vue') }
+    ]
+  },
+  {
+    path: '/owner/',
+    component: () => import('layouts/OwnerLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/OwnerPage.vue') }
     ]
   },
 
