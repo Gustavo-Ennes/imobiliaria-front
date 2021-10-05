@@ -20,16 +20,20 @@ export default boot(({ app, router, store }) => {
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
 
-  // router.beforeEach((to, from, next) => {
-  //   console.log(to.name)
-  //   if(to.name !== 'login'){
-  //     if(! store.state.user ){
-  //       next({path: '/login'})
-  //       return
-  //     }
-  //   }
-  //   next()
-  // })
+  router.beforeEach((to, from, next) => {
+
+    const needRedirect = () => {
+      return (to.name !== 'login' && to.path.startsWith('/dash'))
+    }    
+
+    if(needRedirect()){
+      if(! store.state.user ){
+        next({path: '/login'})
+        return
+      }
+    }
+    next()
+  })
 })
 
 export { api }
