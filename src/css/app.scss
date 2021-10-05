@@ -1,1 +1,25 @@
 // app global css in SCSS form
+.loginCard{
+
+  @media only screen and (max-width: 320px){
+    width:95%;
+    height: auto;
+  }
+  @media only screen and (min-width: 320px){
+    width:90%;
+    height: auto;
+  }
+  @media only screen and (min-width: 480px){
+    width:85%;
+    height: auto;
+  }
+  @media only screen and (min-width: 768px){
+    width:70%;
+    height: auto;
+  }
+  @media only screen and (min-width: 1024px){
+    width:50%;
+    height: auto;
+  }
+  
+}
