@@ -1,1 +1,30 @@
 // app global css in SCSS form
+@media screen and (max-width: 290px){
+  .card{
+    width: 95% !important; height: auto;
+  }
+}
+@media screen and (min-width: 290px){
+  .card{
+    width: 90% !important; height: auto;
+  }
+  
+}
+@media screen and (min-width: 440px){
+  .card{
+    width: 85% !important; height: auto;
+  }
+  
+}
+@media screen and (min-width: 789px){
+  .card{
+    width: 70% !important; height: auto;
+  }
+  
+}
+@media screen and (min-width: 998px){
+  .card{
+    width: 55% !important; height: auto;
+  }
+  
+}
