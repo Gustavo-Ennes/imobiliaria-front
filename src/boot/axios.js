@@ -9,7 +9,7 @@ import axios from 'axios'
 // for each client)
 const api = axios.create({ baseURL: 'https://api.example.com' })
 
-export default boot(({ app }) => {
+export default boot(({ app, router, store }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
 
   app.config.globalProperties.$axios = axios
@@ -19,6 +19,17 @@ export default boot(({ app }) => {
   app.config.globalProperties.$api = api
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
+
+  router.beforeEach((to, from, next) => {
+    console.log(to.name)
+    if(to.name !== 'login'){
+      if(! store.state.user ){
+        next({path: '/login'})
+        return
+      }
+    }
+    next()
+  })
 })
 
 export { api }
