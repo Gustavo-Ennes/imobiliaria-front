@@ -89,7 +89,7 @@
 import { ref } from 'vue'
 
 export default {
-  // name: 'LayoutName',
+  name: 'OwnerLayout',
 
   setup () {
     const leftDrawerOpen = ref(false)
