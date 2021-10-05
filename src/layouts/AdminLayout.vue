@@ -22,9 +22,11 @@
       
         <q-scroll-area class="fit">
           <q-list>
-            <q-item v-for="item in items" :key='item.title'>
-
-                <EssentialLink :icon="item.icon" :title="item.title" :active="item.active" :link="item.title" />
+              <q-item v-for="item in items" :key='item.title' :to='{name: item.to}'> 
+                
+                <q-item-section>
+                  <q-item-label> {{ item.title }} </q-item-label>
+                </q-item-section>
 
             </q-item>
           </q-list>
@@ -40,13 +42,9 @@
 
 <script>
 import { ref } from 'vue'
-import EssentialLink from '../components/EssentialLink.vue'
 
 export default {
   name: "AdminLayout",
-  components: {
-    EssentialLink
-  },
 
   data(){
     return {
@@ -54,22 +52,22 @@ export default {
         {
           title: "Tenants",
           icon: "person_pin",
-          active: true
+          to: "AdminTenantsPage"
         },
         {
           title: "Owners",
           icon: "person_pin",
-          active: false
+          to: "AdminOwnersPage"
         },
         {
           title: "Lands",
           icon: "crop_portrait",
-          active: false
+          to: "AdminLandsPage"
         },
         {
           title: "Properties",
           icon: "maps_home_work",
-          active: false
+          to: "AdminPropertiesPage"
         }
       ]
     }
