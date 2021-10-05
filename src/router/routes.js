@@ -8,7 +8,7 @@ const routes = [
     ]
   },
   {
-    path: '/admin/',
+    path: '/dash/admin/',
     component: () => import('layouts/AdminLayout.vue'),
     children: [
       { path: '', name: "adminPage", component: () => import('src/pages/admin/AdminPage.vue') },
@@ -19,14 +19,14 @@ const routes = [
     ]
   },
   {
-    path: '/tenant/',
+    path: '/dash/tenant/',
     component: () => import('layouts/TenantLayout.vue'),
     children: [
       { path: '', name: "TenantPage", component: () => import('src/pages/tenant/TenantPage.vue') },
     ]
   },
   {
-    path: '/owner/',
+    path: '/dash/owner/',
     component: () => import('layouts/OwnerLayout.vue'),
     children: [
       { path: '', name:"OwnerPage",  component: () => import('src/pages/owner/OwnerPage.vue') },
