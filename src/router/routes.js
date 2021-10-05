@@ -15,14 +15,16 @@ const routes = [
     path: '/tenant/',
     component: () => import('layouts/TenantLayout.vue'),
     children: [
-      { path: '', component: () => import('src/pages/tenant/TenantPage.vue') }
+      { path: '', component: () => import('src/pages/tenant/TenantPage.vue') },
     ]
   },
   {
     path: '/owner/',
     component: () => import('layouts/OwnerLayout.vue'),
     children: [
-      { path: '', component: () => import('src/pages/owner/OwnerPage.vue') }
+      { path: '', component: () => import('src/pages/owner/OwnerPage.vue') },
+      { path: 'properties/', component: () => import('src/pages/tenant/OwnerPropertiesPage.vue') },
+      { path: 'lands/', component: () => import('src/pages/tenant/OwnerLandsPage.vue') },
     ]
   },
 
