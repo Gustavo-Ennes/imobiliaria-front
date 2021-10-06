@@ -1,5 +1,6 @@
 const routes = [
   {
+<<<<<<< HEAD
     path: '/login',
     component: () => import('layouts/EmptyLayout.vue'),
     children: [
@@ -8,6 +9,16 @@ const routes = [
   },
   {
     path: '/admin/',
+=======
+    path: "/login/",
+    component: () => import('layouts/EmptyLayout.vue'),
+    children: [
+      {path: "", name: "login", component: () => import("pages/LoginPage.vue")}
+    ]
+  },
+  {
+    path: '/dash/admin/',
+>>>>>>> 190ccfe7912f9481a96841036654ee672af69419
     component: () => import('layouts/AdminLayout.vue'),
     children: [
       { path: '', name: "adminPage", component: () => import('src/pages/admin/AdminPage.vue') },
@@ -18,14 +29,14 @@ const routes = [
     ]
   },
   {
-    path: '/tenant/',
+    path: '/dash/tenant/',
     component: () => import('layouts/TenantLayout.vue'),
     children: [
       { path: '', name: "TenantPage", component: () => import('src/pages/tenant/TenantPage.vue') },
     ]
   },
   {
-    path: '/owner/',
+    path: '/dash/owner/',
     component: () => import('layouts/OwnerLayout.vue'),
     children: [
       { path: '', name:"OwnerPage",  component: () => import('src/pages/owner/OwnerPage.vue') },

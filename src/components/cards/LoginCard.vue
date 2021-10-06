@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <section class='absolute-center loginCard'>
     <q-card square bordered>
       <q-card-section horizontal class='q-pa-md'>
@@ -23,10 +24,31 @@
         </q-card-actions>
       </q-card-section>
     </q-card>
+=======
+  <section class='relative-position'>
+    <q-form @submit.prevent='submit'>
+
+      <q-card square class='q-pa-md shadow-8 littleTransparent'>
+        <q-card-section>
+          <p class='text-h2 q-px-xs text-black-1'>Login</p>
+        </q-card-section>
+        <q-card-section>
+          <q-input color="red-6" label="e-mail" />
+          <q-input type='password' color="red-6" label="password" />
+        </q-card-section>
+        <q-card-actions align="center" class='q-px-md q-pt-xl'>
+          <q-btn class='full-width' color="green-9" type='submit' label="Login"/>
+          <q-btn class='full-width q-mt-lg' flat label='forget password'/>
+        </q-card-actions>
+      </q-card>
+
+    </q-form>
+>>>>>>> 190ccfe7912f9481a96841036654ee672af69419
   </section>
 </template>
 
 <script>
+<<<<<<< HEAD
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -55,3 +77,21 @@ export default defineComponent({
 <style scoped>
 
 </style>
+=======
+export default {
+  name: "LoginCard",
+
+  methods:{
+    submit(){
+
+    }
+  }
+}
+</script>
+
+<style scoped>
+.littleTransparent{
+  background-color: rgba(255, 255, 255, .78);
+}
+</style>
+>>>>>>> 190ccfe7912f9481a96841036654ee672af69419

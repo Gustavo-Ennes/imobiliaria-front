@@ -1,5 +1,6 @@
 export default () => {
   return {
-    isLoading: false
+    isLoading: false,
+    user: null
   }
 } 
