@@ -23,17 +23,19 @@ export default boot(({ app, router, store }) => {
   router.beforeEach((to, from, next) => {
 
     const needRedirect = () => {
-      return (to.name !== 'login' && to.path.startsWith('/dash'))
+      return (to.name !== 'login' && to.path.startsWith('/dash') && !store.state.user)
     }
-    
 
-    if(needRedirect()){
-      if(! store.state.user ){
-        next({path: '/login'})
-        return
-      }
+    const path = '/login'    
+
+    if(needRedirect()){      
+
+      store.commit('setRedirectTo', to.fullPath)
+      next({path})
+
+    } else{
+      next()
     }
-    next()
   })
 })
 

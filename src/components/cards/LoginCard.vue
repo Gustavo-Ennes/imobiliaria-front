@@ -1,91 +1,142 @@
 <template>
-<<<<<<< HEAD
-  <section class='absolute-center loginCard'>
-    <q-card square bordered>
-      <q-card-section horizontal class='q-pa-md'>
-        <p class='text-h4'>Login</p>
-      </q-card-section>
-      <q-card-section>
-
-        <q-form id="loginForm" @submit.prevent="submitForm">
-          <q-input v-model='email' label="e-mail" autofocus square  />
-          <q-input v-model='password' label='password' class='q-mt-sm' type="password" square shadow-text="password"/>
-        </q-form>
-        
-      </q-card-section>
-      <q-card-section>
-        <q-card-actions align='center'>
-          <q-btn color='teal-10' align='center' class='full-width' unelevated>Login</q-btn>
-        </q-card-actions>
-      </q-card-section>
-      <q-card-section>
-        <q-card-actions align='center'>
-          <q-btn type='submit' form='loginForm' color='red-4' align='center' flat unelevated>Forget password</q-btn>
-        </q-card-actions>
-      </q-card-section>
-    </q-card>
-=======
   <section class='relative-position'>
-    <q-form @submit.prevent='submit'>
+
+    <!-- alert -->
+    <div class="q-pa-md">
+      <q-btn
+      color="red" 
+      type='negative'
+      v-if='showNotification' 
+      @show="showNotif" 
+      label="Wrong username or password" 
+      classes='full-width'
+      icon='error'
+      
+      />
+    </div>
+
+    <q-form>
 
       <q-card square class='q-pa-md shadow-8 littleTransparent'>
         <q-card-section>
           <p class='text-h2 q-px-xs text-black-1'>Login</p>
         </q-card-section>
         <q-card-section>
-          <q-input color="red-6" label="e-mail" />
-          <q-input type='password' color="red-6" label="password" />
+
+          <q-input
+          v-model='username' 
+          color="red-6" 
+          label="e-mail" 
+          aria-autocomplete="false"
+          :rules='validation'
+          />
+
+          <q-input 
+          v-model='password' 
+          type='password'
+          color="red-6"
+          label="password"
+          autocomplete='false'
+          :rules='validation'
+          />
+
         </q-card-section>
         <q-card-actions align="center" class='q-px-md q-pt-xl'>
-          <q-btn class='full-width' color="green-9" type='submit' label="Login"/>
+          <q-btn class='full-width' color="green-9" @click='submit' label="Login"/>
           <q-btn class='full-width q-mt-lg' flat label='forget password'/>
         </q-card-actions>
       </q-card>
 
     </q-form>
->>>>>>> 190ccfe7912f9481a96841036654ee672af69419
   </section>
 </template>
 
 <script>
-<<<<<<< HEAD
-import { defineComponent } from 'vue'
 
-export default defineComponent({
-  name: "LoginCard",
+import { useQuasar } from 'quasar'
+import getRouter from '../../router/index'
 
-  methods:{
-    clearForm(){
-      this.email = ''
-      this.password = ''
-    },
-    submitForm(){
-
-    }
-  },
-
-  data(){
-    return {
-      email: '',
-      password: ''
-    }
-  }
-
-})
-</script>
-
-<style scoped>
-
-</style>
-=======
 export default {
   name: "LoginCard",
 
-  methods:{
-    submit(){
+  data(){
+    return {
+      path: '',
+      username: '',
+      password: '',
+      type: 'admin',
+      defaultUsername: "kratos",
+      defaultPassword: '12345',
+      showNotification: false,
+      validation: [
+        value => value.length >= 5 || "At least 5 characters in this field" 
+      ]
+    }
+  },
 
+  methods:{
+    
+    clearForm() {
+      this.password = ''
+    },
+
+    submit(){
+      const router = getRouter({null: null})
+
+      if(this.username == this.defaultUsername && this.password == this.defaultPassword){
+        this.path = this.$store.state.redirectTo
+        this.$store.commit("setUser", "kratos")
+
+        if(!this.path){
+          switch(this.type){
+            case 'admin':
+              this.path = '/dash/admin'
+              break
+            case 'tenant':
+              this.path = '/dash/tenant'
+              break
+            case 'owner':
+              this.path = '/dash/owner'
+              break;
+            default:
+              this.path = ''
+              break
+          }
+        }
+        console.log(`path: ${this.path}`)
+        router.push(this.path)
+
+
+      } else{
+        this.showNotification = true
+        setTimeout(() => {this.showNotification = false}, 1000)
+      }
+
+      this.clearForm()
+    }
+  },
+
+  mounted () {
+    
+  },
+
+  setup () {
+    const $q = useQuasar()
+    
+    return {
+      
+      showNotif () {
+        $q.notify({
+          message: 'Wrong password or username.',
+          color: 'red',
+          icon: 'error',
+          classes: 'full-width',
+          timeout: '1000'
+        })
+      }
     }
   }
+
 }
 </script>
 
@@ -94,4 +145,3 @@ export default {
   background-color: rgba(255, 255, 255, .78);
 }
 </style>
->>>>>>> 190ccfe7912f9481a96841036654ee672af69419
