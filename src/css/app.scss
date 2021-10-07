@@ -1,4 +1,10 @@
 // app global css in SCSS form
+html{
+  background-image: url('https://storage.googleapis.com/ennes/imobiliaria/background.webp');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: 66% center;
+}
 @media screen and (max-width: 290px){
   .card{
     width: 95% !important; height: auto;
@@ -27,4 +33,9 @@
     width: 55% !important; height: auto;
   }
   
+}
+
+
+.littleTransparent{
+  background-color: rgba(255, 255, 255, 0.1)
 }

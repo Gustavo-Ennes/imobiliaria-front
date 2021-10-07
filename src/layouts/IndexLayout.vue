@@ -19,14 +19,11 @@ import Footer from 'components/sections/Footer.vue'
 
 export default defineComponent({
   name: 'IndexLayout',
-
+  
   components: {
     Navbar,
     Footer
   },
 
-  setup() {
-    
-  },
 })
 </script>

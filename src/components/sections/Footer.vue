@@ -1,6 +1,6 @@
 <template>
 
-  <q-footer elevated class="bg-grey-8 text-white">
+  <q-footer elevated class="text-white littleTransparent q-shadow-10 q-pa-lg">
     <q-toolbar>
       <q-toolbar-title>
         <q-avatar>
