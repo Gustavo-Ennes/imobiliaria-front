@@ -95,7 +95,13 @@
           :rules="[ val => (val && val.length === 10) || `This zipcode is invalid`]"
         />
 
-        <q-toggle v-model="accept" label="I accept the license and terms" />
+        <q-toggle 
+        v-model="accept" 
+        label="I accept the license and terms" 
+        lazy-rules
+        :rules='[
+          val => true || "Você tem que aceitar os termos se quiser se cadastrar"
+        ]'/>
 
         <div>
           <q-btn label="Submit" type="submit" color="primary"/>

@@ -34,8 +34,8 @@
       </q-list>
       <q-space />
       <q-list padding class="menu-list  text-blue-10" bordered separator>
-        <DrawerItem name='Cadastro Locador' @click="$router.push({name: 'TenantRegistration'})" icon='send' :description="'Faça seu cadastro para alugar casas ou terrenos'" />
-        <DrawerItem name='Cadastro Locatário'  @click="$router.push({name: 'OwnerRegistration'})" icon='drafts' :description="'Se cadastre para alugar ou vender seus imóveis ou terrenos'"/>
+        <DrawerItem name='Cadastro Locador' @click="$router.push({name: 'OwnerRegistration'})" icon='send' :description="'Faça seu cadastro para alugar casas ou terrenos'" />
+        <DrawerItem name='Cadastro Locatário'  @click="$router.push({name: 'TenantRegistration'})" icon='drafts' :description="'Se cadastre para alugar ou vender seus imóveis ou terrenos'"/>
       </q-list>
       <q-space />
       <q-list padding class="menu-list  text-blue-10" bordered separator>
