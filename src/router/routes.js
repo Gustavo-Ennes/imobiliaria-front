@@ -3,7 +3,11 @@ const routes = [
     path:'',
     component: () => import('layouts/IndexLayout.vue'),
     children: [
-      {path: '', name: 'index', component: () => import("pages/Index")}
+      {path: '', name: 'index', component: () => import("pages/Index")},
+      {path: '/registration/tenant', name: 'TenantRegistration', props:{type: "tenant"}, component: () => import("pages/Registration.vue")},
+      {path: '/registration/owner', name: 'OwnerRegistration', props:{type: "owner"}, component: () => import("pages/Registration.vue")},
+      {path: '/registration/admin', name: 'AdminRegistration', props:{type: "admin"}, component: () => import("pages/Registration.vue")},
+
     ]
   },
   {
