@@ -18,7 +18,11 @@ const routes = [
     ]
   },
   {
+<<<<<<< HEAD
     path: '/dash/admin',
+=======
+    path: '/dash/admin/',
+>>>>>>> dev
     component: () => import('layouts/AdminLayout.vue'),
     children: [
       { path: '', name: "adminPage", component: () => import('src/pages/admin/AdminPage.vue') },
@@ -29,14 +33,22 @@ const routes = [
     ]
   },
   {
+<<<<<<< HEAD
     path: '/dash/tenant',
+=======
+    path: '/dash/tenant/',
+>>>>>>> dev
     component: () => import('layouts/TenantLayout.vue'),
     children: [
       { path: '', name: "TenantPage", component: () => import('src/pages/tenant/TenantPage.vue') },
     ]
   },
   {
+<<<<<<< HEAD
     path: '/dash/owner',
+=======
+    path: '/dash/owner/',
+>>>>>>> dev
     component: () => import('layouts/OwnerLayout.vue'),
     children: [
       { path: '', name:"OwnerPage",  component: () => import('src/pages/owner/OwnerPage.vue') },
