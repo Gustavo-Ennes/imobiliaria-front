@@ -1,5 +1,5 @@
 <template>
-  <q-card square class='q-ma-md q-pa-sm shadow-8 littleTransparent'>
+  <q-card square class='q-ma-md q-pa-sm shadow-8 littleTransparent regCard'>
     <q-card-section>
       <p class='text-h4 q-px-xs text-black-1'>Registration: {{ type }}</p>
     </q-card-section>
@@ -9,6 +9,7 @@
         @submit="onSubmit"
         @reset="onReset"
         class="q-gutter-md"
+        @validation-error="errorAnimation"
       >
         <q-input
           filled
@@ -29,7 +30,6 @@
           mask="(##) #####-####"
           hint="With area code"
           lazy-rules
-          @click="onSubmit"
           :rules="[
             val => val && val.length == 15 || 'Your phone number must have 11 digits'
           ]"
@@ -109,6 +109,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: "Registration",
 
@@ -132,14 +134,39 @@ export default {
   },
 
   methods:{
+    resetAnimation(){
+      const el = document.querySelector('.regCard')
+      el.classList.add('animate__animated', 'animate__bounce', 'animate_duration-200ms')
+      el.addEventListener('animationend', () => {
+        el.classList.remove('animate__animated', 'animate__bounce',  'animate__duration-200ms')
+      })
+    },
+    submitAnimation () {
+      const el = document.querySelector('.regCard')
+      el.classList.add('animate__animated', 'animate__lightSpeedOutLeft', 'animate_duration-200ms')
+      el.addEventListener('animationend', () => {
+        el.classList.remove('animate__animated', 'animate__lightSpeedOutLeft',  'animate__duration-200ms')
+      })
+    },
+    errorAnimation() {
+      const el = document.querySelector('.regCard')
+      el.classList.add('animate__animated', 'animate__tada', 'animate_duration-.1s')
+      el.addEventListener('animationend', () => {
+        el.classList.remove('animate__animated', 'animate__tada',  'animate__duration-.1s')
+      })
+    },
     isUniqueUsername () {
-      return false
+      return true
     },
     onSubmit(){
-      console.log(`phone: ${this.phone.length}`)
+      this.submitAnimation()
+      this.$router.push({name: 'index'})
     },
     onReset(){
-      
+      this.resetAnimation()  
+      Object.keys(this.$data).forEach(key => {
+        this.$data[key] = key !== 'accept' ? '' : false
+      })    
     },
     phoneValidation (val){
       let reg = /^(\([0-9]{2}\)) [0-9]{4,5}-[0-9]{4}/;
@@ -148,6 +175,7 @@ export default {
   },
   
   props: ['type']
+
 }
 </script>
 
