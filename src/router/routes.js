@@ -1,14 +1,20 @@
-
 const routes = [
   {
-    path: "/login/",
-    component: () => import('layouts/EmptyLayout.vue'),
+    path:'',
+    component: () => import('layouts/IndexLayout.vue'),
     children: [
-      {path: "", name: "login", component: () => import("pages/LoginPage.vue")}
+      {path: '', name: 'index', component: () => import("pages/Index")}
     ]
   },
   {
-    path: '/dash/admin/',
+    path: '/login',
+    component: () => import('layouts/EmptyLayout.vue'),
+    children: [
+      {path: '', name: 'login', component: () => import('src/pages/LoginPage') }
+    ]
+  },
+  {
+    path: '/dash/admin',
     component: () => import('layouts/AdminLayout.vue'),
     children: [
       { path: '', name: "adminPage", component: () => import('src/pages/admin/AdminPage.vue') },
@@ -19,14 +25,14 @@ const routes = [
     ]
   },
   {
-    path: '/dash/tenant/',
+    path: '/dash/tenant',
     component: () => import('layouts/TenantLayout.vue'),
     children: [
       { path: '', name: "TenantPage", component: () => import('src/pages/tenant/TenantPage.vue') },
     ]
   },
   {
-    path: '/dash/owner/',
+    path: '/dash/owner',
     component: () => import('layouts/OwnerLayout.vue'),
     children: [
       { path: '', name:"OwnerPage",  component: () => import('src/pages/owner/OwnerPage.vue') },

@@ -23,6 +23,7 @@ export default boot(({ app, router, store }) => {
   router.beforeEach((to, from, next) => {
 
     const needRedirect = () => {
+
       return (to.name !== 'login' && to.path.startsWith('/dash'))
     }    
 
@@ -32,8 +33,7 @@ export default boot(({ app, router, store }) => {
         return
       }
     }
-    next()
-  })
+    next()  })
 })
 
 export { api }
