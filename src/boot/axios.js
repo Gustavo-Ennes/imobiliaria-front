@@ -23,8 +23,6 @@ export default boot(({ app, router, store }) => {
   router.beforeEach((to, from, next) => {
 
     const needRedirect = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
       return (to.name !== 'login' && to.path.startsWith('/dash') && !store.state.user)
     }
 
@@ -38,26 +36,17 @@ export default boot(({ app, router, store }) => {
     } else{
       next()
     }
-=======
-=======
 
->>>>>>> e958f7f8aed0cc521b5824a32adb0a1c7176267f
-      return (to.name !== 'login' && to.path.startsWith('/dash'))
-    }    
+    return (to.name !== 'login' && to.path.startsWith('/dash'))
 
     if(needRedirect()){
       if(! store.state.user ){
         next({path: '/login'})
         return
       }
-    }
-<<<<<<< HEAD
-    next()
->>>>>>> dev
-  })
-=======
-    next()  })
->>>>>>> e958f7f8aed0cc521b5824a32adb0a1c7176267f
+        }
+      next()
+    })
 })
 
 export { api }
