@@ -24,6 +24,7 @@ export default boot(({ app, router, store }) => {
 
     const needRedirect = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
       return (to.name !== 'login' && to.path.startsWith('/dash') && !store.state.user)
     }
 
@@ -38,6 +39,9 @@ export default boot(({ app, router, store }) => {
       next()
     }
 =======
+=======
+
+>>>>>>> e958f7f8aed0cc521b5824a32adb0a1c7176267f
       return (to.name !== 'login' && to.path.startsWith('/dash'))
     }    
 
@@ -47,9 +51,13 @@ export default boot(({ app, router, store }) => {
         return
       }
     }
+<<<<<<< HEAD
     next()
 >>>>>>> dev
   })
+=======
+    next()  })
+>>>>>>> e958f7f8aed0cc521b5824a32adb0a1c7176267f
 })
 
 export { api }
