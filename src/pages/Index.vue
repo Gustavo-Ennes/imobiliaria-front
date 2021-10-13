@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Search from 'components/sections/Search.vue'
+import Search from 'components/cards/SearchCard.vue'
 import List from 'components/sections/List.vue'
 import Benefits from 'components/sections/Benefits.vue'
 import Location from 'components/sections/Location.vue'
