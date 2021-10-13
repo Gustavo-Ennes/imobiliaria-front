@@ -6,20 +6,28 @@
     <q-card-section>
       <div class='row justify-content-center'>
 
-        <div class='col-12 col-md-6'>
-          <div class="q-gutter-sm text-center">
-            <q-radio v-model="type" val="property" label="Property"/>
-            <q-radio v-model="type" val="land" label="Land" />
-            <q-radio  v-model="type" val="both" label="Both" />
-          </div>
+        <div class='col-12 col-md-6 text-center'>
+          <q-btn-toggle
+            glossy
+            v-model="type"
+            :options="[
+              { label: 'Lands', value: 'land' },
+              { label: 'Properties', value: 'property' },
+              { label: 'Both', value: 'both' }
+            ]"
+          />
         </div>
 
-        <div class='col-12 col-md-6'>
-          <div class="q-gutter-sm q-md-mt-sm  text-center">
-            <q-radio v-model="how" val="rent" label="To rent" />
-            <q-radio v-model="how" val="buy" label="To buy" />
-            <q-radio v-model="how" val="both" label="Both" />
-          </div>
+        <div class='col-12 col-md-6 text-center'>
+          <q-btn-toggle
+            glossy
+            v-model="how"
+            :options="[
+              { label: 'To rent', value: 'rent' },
+              { label: 'To buy', value: 'buy' },
+              { label: 'Both', value: 'both' }
+            ]"
+          />
         </div>
 
         <div class='col-6'>
