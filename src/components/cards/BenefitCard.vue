@@ -1,5 +1,5 @@
 <template>
- <q-card square class='shadow-8 littleTransparent'>
+ <q-card square class='shadow-8 littleTransparent full-width'>
    <q-card-section style='height: 70%'>
      <p class='text-h5 vertical-top'> {{ title }} </p>
      <p class='verical-top' caption> {{ subtitle }} </p>

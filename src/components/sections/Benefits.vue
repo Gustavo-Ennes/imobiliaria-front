@@ -1,7 +1,7 @@
 <template>
   <div class=''>
     <q-list class='row full-width wrap justify-center items-stretch content-stretch'>
-      <q-item v-for='benefit in benefits' :key='benefit.icon' class='col-xs-12 col-sm-6 col-lg-4'>
+      <q-item v-for='benefit in benefits' :key='benefit.icon' class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>
 
         <BenefitCard 
           :icon='benefit.icon' 
