@@ -8,6 +8,7 @@
     </q-page-container>
 
     <Footer />
+    <Institucional />
 
   </q-layout>
 </template>
@@ -16,13 +17,15 @@
 import { defineComponent } from 'vue'
 import Navbar from 'components/sections/Navbar.vue'
 import Footer from 'components/sections/Footer.vue'
+import Institucional from 'components/sections/Institucional.vue'
 
 export default defineComponent({
   name: 'IndexLayout',
   
   components: {
     Navbar,
-    Footer
+    Footer,
+    Institucional
   },
 
 })
