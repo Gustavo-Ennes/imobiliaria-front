@@ -1,5 +1,5 @@
 <template>
-  <div class='full-width bg-dark text-purple-1'>
+  <div class='full-width bg-dark text-purple-1 institucional'>
     <div class='row items-center justify-evenly q-gutter-xs'>
       <div class='col-3 text-center'>
         <q-img alt="Imobiliaria" src="img/logo.png" fit='cover' width='50px'/>
@@ -25,8 +25,7 @@
 
 <script>
 export default {
-  name: "Institucional",
-  
+  name: "Institucional",  
 
   data(){
     return {
@@ -38,12 +37,13 @@ export default {
         Venda e locação de casas e apartamentos, terrenos,  sítios e fazendas.
       `
     }
+  },
+
+  mounted () {
+    const el = document.querySelector('.institucional')
+    el.style.setProperty('height', window.innerHeight / 3)
   }
 
 
 }
 </script>
-
-<style>
-
-</style>

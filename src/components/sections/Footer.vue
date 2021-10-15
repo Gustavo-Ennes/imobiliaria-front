@@ -1,5 +1,5 @@
 <template>
-  <div class='full-width q-py-xl bg-dark text-purple-1'>
+  <div class='q-py-xl bg-dark text-purple-1 footer'>
     <footer class='row justify-evenly align-center'>
       <div class='col text-center'>
         <p class='text-h5 q-pa-xs'>
@@ -53,8 +53,9 @@
 <script>
 export default {
   name: 'Footer',
-  setup () {
-    return {}
-  }
+  mounted () {
+    const el = document.querySelector('.footer')
+    el.style.setProperty('height', (window.innerHeight / 3) * 2 )
+  },
 }
 </script>

@@ -3,7 +3,7 @@
   appear
   enter-active-class='animate__animated animate__zoomInDown animate__fast'
   >
-    <q-page padding>
+    <q-page class='wrapper'>
       <RegistrationCard :type='type' />
     </q-page>
   </transition>
@@ -23,6 +23,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
+.wrapper{
+  background-image: url('https://storage.googleapis.com/ennes/imobiliaria/register_background.jpg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
 </style>
+
+

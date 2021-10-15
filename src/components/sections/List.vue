@@ -8,7 +8,9 @@
     control-color="white"
     navigation
     padding
-    class="q-ma-md bg-primary text-white shadow-10"
+    infinite
+    :autoplay="1500"
+    class="full-width fullHeight bg-primary text-white shadow-10"
   >
     <q-carousel-slide v-for='house in fakeHouses' :key='house.title' :img-src="house.img" :name="house.title" class="column no-wrap flex-center">
       <q-icon name="house" size="56px" />
