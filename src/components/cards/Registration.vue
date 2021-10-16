@@ -1,5 +1,5 @@
 <template>
-  <q-card square class='q-pa-md shadow-8 littleTransparent regCard'>
+  <q-card square class='shadow-8 littleTransparent regCard'>
     <q-card-section>
       <p class='text-h4 q-px-xs text-black-1'>Registration: {{ type }}</p>
     </q-card-section>
@@ -191,8 +191,7 @@ export default {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  padding: 30px;
 }
 
 </style>
