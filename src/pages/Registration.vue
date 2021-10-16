@@ -29,8 +29,10 @@ export default {
   background-image: url('https://storage.googleapis.com/ennes/imobiliaria/register_background.jpg');
   background-repeat:no-repeat;
   background-size: cover;
-  background-position: center center;
-  height: 100%;
+  background-position: 100% 100%;
+  // background-color: rgba(0, 0, 0, 0.5);
+  padding: 5%;
+  height: 100% !important;
 }
 </style>
 

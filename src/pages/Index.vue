@@ -2,12 +2,21 @@
   <!-- template has navbar and footer -->
   <q-page>
     <section class='fullHeight search'>
-      <Search />
+      <div class='row'>
+        <div class='col-xs-12 col-md-6'>
+          <Search />
+        </div>
+        <div v-show='isBreakpointMdOrMore' class='col-md-6'>
+          <p class='text-h1 indexPhraseFont searchText text-center q-pt-xl'>
+            Your house<br/> one click <br/>apart
+          </p>
+        </div>
+      </div>
     </section>
     <section class='fullHeight list'>
       <List />
     </section>
-    <section class=''>
+    <section >
       <Benefits />
       <Location />
     </section>
@@ -22,6 +31,12 @@ import Location from 'components/sections/Location.vue'
 
 export default {
   name: 'Index',
+
+  computed:{
+    isBreakpointMdOrMore () {
+      return window.innerWidth > 1023
+    }
+  },
 
   components: {
     Search,
@@ -52,6 +67,10 @@ export default {
   background-repeat:no-repeat;
   background-size: cover;
   background-position: 66% center;
+}
+.searchText{
+  margin: 10%;
+  color: white;
 }
 </style>
 

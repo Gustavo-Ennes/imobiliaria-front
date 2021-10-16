@@ -1,4 +1,21 @@
 // app global css in SCSS form
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@300&family=Righteous&display=swap');
+
+.labelFont{
+  font-family: 'Montserrat', cursive;
+}
+
+.textFont{
+  font-family: 'Quicksand', cursive;
+}
+
+.indexPhraseFont{
+  font-family: 'Righteous', cursive;
+  text-shadow: -10px 12px 4px rgba(0, 0, 0, 0.65);
+}
+
 @media screen and (max-width: 290px){
   .card{
     width: 95% !important; height: auto;

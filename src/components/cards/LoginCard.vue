@@ -1,5 +1,5 @@
 <template>
-  <section class='relative-position'>
+  <section class='login textFont'>
 
     <!-- alert -->
     <div class="q-pa-md">
@@ -15,11 +15,11 @@
       />
     </div>
 
-    <q-form>
+    <q-form class='q-ma-lg'>
 
-      <q-card square class='q-pa-md shadow-8 littleTransparent'>
+      <q-card square class='q-pa-md shadow-8 littleTransparent maxWidth'>
         <q-card-section>
-          <p class='text-h2 q-px-xs text-black-1'>Login</p>
+          <p class='text-h2 q-px-xs text-black-1 labelFont'>Login</p>
         </q-card-section>
         <q-card-section>
 
@@ -143,5 +143,14 @@ export default {
 <style scoped>
 .littleTransparent{
   background-color: rgba(255, 255, 255, .78);
+}
+.maxWidth{
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login{
+  margin-bottom:4%;
 }
 </style>
