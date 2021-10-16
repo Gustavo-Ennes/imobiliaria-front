@@ -1,9 +1,14 @@
 <template>
-  <q-page padding class='bg-teal-2'>
-    <section class='absolute-center card'>
-      <LoginCard />
-    </section>
-  </q-page>
+  <transition
+  appear
+  enter-active-class='animate__animated animate__zoomInDown animate__fast'
+  >
+    <q-page padding class='bg-teal-2'>
+      <section class='absolute-center card'>
+        <LoginCard />
+      </section>
+    </q-page>
+  </transition>
 </template>
 
 <script>
