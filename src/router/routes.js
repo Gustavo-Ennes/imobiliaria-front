@@ -7,12 +7,15 @@ const routes = [
       {path: '/registration/tenant', name: 'TenantRegistration', props:{type: "tenant"}, component: () => import("pages/Registration.vue")},
       {path: '/registration/owner', name: 'OwnerRegistration', props:{type: "owner"}, component: () => import("pages/Registration.vue")},
       {path: '/registration/admin', name: 'AdminRegistration', props:{type: "admin"}, component: () => import("pages/Registration.vue")},
+      {path: '/sell', name: 'SellList', component: () => import("pages/SellList.vue")},
+      {path: '/rent', name: 'RentList', component: () => import("pages/RentList.vue")},
+
 
     ]
   },
   {
     path: '/login',
-    component: () => import('layouts/EmptyLayout.vue'),
+    component: () => import('layouts/IndexLayout.vue'),
     children: [
       {path: '', name: 'login', component: () => import('src/pages/LoginPage') }
     ]

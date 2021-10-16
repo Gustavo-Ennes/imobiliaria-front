@@ -28,8 +28,8 @@
     <q-scroll-area class="fit">
       <q-list padding class="menu-list text-blue-10">
 
-        <DrawerItem name='Locação' icon='mouse' :description="'Imóveis e terrenos para locação'" />
-        <DrawerItem name='Venda' icon='star' :description="'Imóveis e terrenos para venda'" />
+        <DrawerItem name='Locação' icon='mouse' :description="'Imóveis e terrenos para locação'" @click='$router.push({name: "RentList"})' />
+        <DrawerItem name='Venda' icon='star' :description="'Imóveis e terrenos para venda'" @click='$router.push({name: "SellList"})' />
         
       </q-list>
       <q-space />
@@ -42,7 +42,11 @@
         <DrawerItem name='Sobre a Imobiliária' icon='drafts' :description="'Veja nossos termos de uso e política de dados'"/>
       </q-list>
       <q-list padding class="menu-list text-blue-10" bordered separator>
-        <DrawerItem name='Entrar' icon='login' :description="'Administre sua conta'"/>
+        <DrawerItem 
+        name='Entrar' 
+        icon='login' 
+        :description="'Administre sua conta'"
+        @click="$router.push({name: 'login'})"/>
       </q-list>
     </q-scroll-area>
   </q-drawer>
