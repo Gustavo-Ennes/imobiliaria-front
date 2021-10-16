@@ -25,9 +25,9 @@ export default {
 
 <style lang="scss" scoped>
 .hover:hover{
-  background-color: rgba(100, 100, 255, 0.5);
+  background-color: rgba(100, 100, 255, 0.75);
   .hoverText{
-    color: rgba(255, 255, 255, 0.9);
+    color: white
   }
 }
 </style>

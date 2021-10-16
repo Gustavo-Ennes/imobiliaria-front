@@ -3,7 +3,7 @@
 
     <Navbar />
 
-    <q-page-container>
+    <q-page-container class='layout labelFont'>
       <router-view />
     </q-page-container>
 
@@ -30,3 +30,10 @@ export default defineComponent({
 
 })
 </script>
+
+<style lang="scss" scoped>
+.layout{
+  background-color: rgba(150, 150, 220, 0.5)
+}
+</style>
+

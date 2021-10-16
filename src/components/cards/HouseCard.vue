@@ -4,11 +4,11 @@
       <q-img height="350px" :src="item.img">
         <div class="absolute-bottom text-h6">
         {{ item.title }}
-        <p caption> {{ item.price }}<span v-if="type === 'rent'">/Mo.</span> </p>
+        <p caption class='labelFont'> {{ item.price }}<span v-if="type === 'rent'">/Mo.</span> </p>
         </div>
       </q-img>
 
-      <q-card-section>
+      <q-card-section class='textFont'>
         {{ item.subtitle }}
       </q-card-section>
 
